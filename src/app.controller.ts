@@ -1,5 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
-import { ApmService } from './apm.service';
+import { Controller, Get } from "@nestjs/common";
+import { ApmService } from "./apm.service";
 
 @Controller()
 export class AppController {
@@ -7,15 +7,15 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    return 'hello';
+    return "hello";
   }
 
-  @Get('delay')
+  @Get("delay")
   getdelay(): Promise<string> {
     // this.apmService.setTransactionName('/delay')
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve('OK');
+        resolve("OK");
       }, 1000);
     });
   }

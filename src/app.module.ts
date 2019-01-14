@@ -1,8 +1,8 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { ApmService } from './apm.service';
-import { APP_INTERCEPTOR } from '@nestjs/core';
-import { ApmInterceptor } from './apm.interceptor';
+import { Module } from "@nestjs/common";
+import { AppController } from "./app.controller";
+import { ApmService } from "./apm.service";
+import { APP_INTERCEPTOR } from "@nestjs/core";
+import { ApmInterceptor } from "./apm.interceptor";
 
 @Module({
   imports: [],
@@ -11,8 +11,8 @@ import { ApmInterceptor } from './apm.interceptor';
     ApmService,
     {
       provide: APP_INTERCEPTOR,
-      useClass: ApmInterceptor,
-    },
-  ],
+      useClass: ApmInterceptor
+    }
+  ]
 })
 export class AppModule {}
